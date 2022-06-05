@@ -1,5 +1,6 @@
-package com.wule.pojo;
+package com.wule;
 
+import com.wule.pojo.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
