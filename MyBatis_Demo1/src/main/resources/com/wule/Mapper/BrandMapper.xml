@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wule.Mapper.BrandMapper">
+    <!--定义查询语句-->
+    <resultMap id="brandResultMap" type="com.wule.pojo.Brand">
+        <result column="company_name" property="companyName"/>
+        <result column="brand_name" property="brandName"/>
+    </resultMap>
+<!--    <sql id="brand_column">-->
+<!--        id, brand_name as brandName, company_name as companyName, ordered, description, status-->
+<!--    </sql>-->
+    <select id="selectAll" resultMap="brandResultMap">
+        select *
+        from brand;
+    </select>
+
+    <select id="selectById" resultMap="brandResultMap">
+        select *
+        from brand
+        where id = #{id};
+    </select>
+
+    <select id="selectByCondition" resultMap="brandResultMap">
+        select *
+        from brand
+        where
+            brand.status = #{status}
+          and company_name like #{companyName}
+          and brand_name like #{brandName};
+    </select>
+</mapper>

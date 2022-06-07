@@ -3,7 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <!--environments：配置数据库连接环境信息-->
     <environments default="development">
+        <!--可以配置多个environment，通过default属性切换不同的environment-->
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
@@ -15,8 +17,12 @@
             </dataSource>
         </environment>
     </environments>
+
     <mappers>
-        <!--加载sql映射文件-->
-        <mapper resource="com/wule/Mapper/UserMapper.xml"/>
+        <!--加载sql映射文件,一个个加载很麻烦
+        <mapper resource="com/wule/Mapper/UserMapper.xml"/>-->
+
+        <!--Mapper代理方式,包扫描,直接扫描一个包里面所有映射文件-->
+        <package name="com/wule/Mapper"/>
     </mappers>
 </configuration>
