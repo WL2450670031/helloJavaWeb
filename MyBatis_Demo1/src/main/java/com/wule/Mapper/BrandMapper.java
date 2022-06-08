@@ -1,7 +1,6 @@
 package com.wule.Mapper;
 
 import com.wule.pojo.Brand;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -18,4 +17,10 @@ public interface BrandMapper
     // List<Brand> selectByCondition(Brand brand);
     //3. Map参数
     List<Brand> selectByCondition(Map map);
+    List<Brand> selectByCondition_Dynamic(Map map);
+    List<Brand> selectByCondition_Dynamic_Single(Brand brand);
+
+    //添加
+    void add(Brand brand);
+
 }

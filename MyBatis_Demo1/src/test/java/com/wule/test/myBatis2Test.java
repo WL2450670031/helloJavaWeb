@@ -31,9 +31,9 @@ public class myBatis2Test
 //        brand.setCompanyName(companyName);
         //hashMap
         Map map = new HashMap();
-        map.put("status",status);
+      //  map.put("status",status);
         map.put("companyName",companyName);
-        map.put("brandName",brandName);
+        map.put("brandName","");
 
 
         //1.加载mybatis核心配置文件，获取SqlSessionFactory
@@ -49,7 +49,39 @@ public class myBatis2Test
 
         //4.执行SQL语句
         //List<Brand> brands = brandMapper.selectByCondition(status,companyName,brandName);
-        List<Brand> brands = brandMapper.selectByCondition(map);
+        List<Brand> brands = brandMapper.selectByCondition_Dynamic(map);
+
+        System.out.println(brands);
+
+        //5.释放资源
+        sqlSession.close();
+    }
+
+    @Test
+    public void selectByCondition_Dynamic_Single() throws IOException
+    {
+        Integer status = 1;//参数
+        String companyName = "%华为%";
+        String brandName = "%华为%";
+
+        Brand brand = new Brand();
+       // brand.setStatus(status);
+       // brand.setBrandName(brandName);
+       // brand.setCompanyName(companyName);
+
+       // 1.加载mybatis核心配置文件，获取SqlSessionFactory
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+        //2.获取对应的SqlSession对象，用它执行Sql。
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+
+        //3.获取UserMapper接口的代理对象
+        BrandMapper brandMapper = sqlSession.getMapper(BrandMapper.class);
+
+        //4.执行SQL语句
+        List<Brand> brands = brandMapper.selectByCondition_Dynamic_Single(brand);
 
         System.out.println(brands);
 

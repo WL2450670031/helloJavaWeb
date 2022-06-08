@@ -8,7 +8,8 @@
         <result column="company_name" property="companyName"/>
         <result column="brand_name" property="brandName"/>
     </resultMap>
-<!--    <sql id="brand_column">-->
+
+    <!--    <sql id="brand_column">-->
 <!--        id, brand_name as brandName, company_name as companyName, ordered, description, status-->
 <!--    </sql>-->
     <select id="selectAll" resultMap="brandResultMap">
@@ -30,4 +31,53 @@
           and company_name like #{companyName}
           and brand_name like #{brandName};
     </select>
+    
+    
+    <select id="selectByCondition_Dynamic" resultMap="brandResultMap">
+        select *
+        from brand
+#         where
+        <where>
+            <if test="status != null">
+               and brand.status = #{status}
+            </if>
+
+            <if test="companyName != null and companyName != ''" >
+                and company_name like #{companyName}
+            </if>
+
+            <if test="brandName != null and brandName != ''" >
+                and brand_name like #{brandName};
+            </if>;
+        </where>
+    </select>
+
+    <select id="selectByCondition_Dynamic_Single" resultMap="brandResultMap">
+        select *
+        from brand
+        where
+        <where>
+           <choose>
+               <when test="status != null">/*相当于case*/
+                brand.status = #{status}
+               </when>
+               <when test="companyName != null and companyName != ''" >
+                company_name like #{companyName}
+               </when>
+               <when test="brandName != null and brandName != ''" >
+                brand_name like #{brandName}
+               </when>
+           </choose>
+        </where>
+    </select>
+
+    <insert id="add">
+        insert into brand (brand_name, company_name, ordered, description, status)
+        values (#{brandName},#{companyName},#{ordered},#{description},#{status});
+    </insert>
+
+
+
+
+
 </mapper>
