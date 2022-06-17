@@ -1,0 +1,232 @@
+@charset "UTF-8";
+
+body
+{
+    width: 1530px;
+    height:800px;
+    margin: 0 auto;
+}
+
+header
+{
+    width: 1530px;
+    height:70px;
+    background: red;
+}
+#d0
+{
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    float: left;
+    padding-top:20px;
+    background: rgb(243, 176, 33);
+}
+#d1
+{
+    width: 300px;
+    margin-left: 200px;
+    float: left;
+}
+#d2
+{
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    float: left;
+    padding-top:20px;
+}
+#b1
+{
+    color: white;
+    font-size:20px;
+    margin: 0 auto;
+}
+#d3
+{
+    width:1024px;
+    height:200px;
+    margin: 0 auto;
+    background-image: url(img/bzt.JPG);
+}
+#text1
+{
+    resize: none;
+    margin-top: 165px;
+    margin-left: 830px;
+}
+#d4
+{
+    width:1024px;
+    height:40px;
+    margin: 0 auto;
+}
+
+#d5
+{
+    width: 990px;
+    height: 360px;
+    margin: 0 auto;
+}
+
+#d6
+{
+    width: 320px;
+    height:360px;
+    float: left;
+}
+
+#p1
+{
+    width: 320px;
+    height:10px;
+    font-size:20px;
+    margin-top:0 ;
+    float: left;
+}
+#p2
+{
+    width: 320px;
+    height:10px;
+    margin-top:0;
+    float: left;
+}
+#d7
+{
+    width: 330px;
+    height: 360px;
+    margin:0;
+    margin-left: 5px;
+    float: left;
+}
+#d8
+{
+    width: 325px;
+    height: 120;
+}
+#hr1
+{
+    width:325px;
+    height: 1px;
+    margin-top: 0;
+    background: green;
+}
+#d9
+{
+    
+    width: 200px ;
+    height: 120;
+    float: right;
+    font-size:13px
+}
+#hr2
+{
+    width:325px;
+    margin-top: 0;
+    background-color: black;
+}
+
+#d10
+{
+    width: 990px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+#d11
+{
+    width: 300px;
+    height: 150px;
+    float: left;
+    margin-left: 20px;
+}
+
+#hr3
+{
+    width:300px;
+    height: 1px;
+    margin-top: 10px;
+    background-color: green;
+}
+pre
+{
+    margin: 0 auto;
+}
+#d12
+{
+    width: 990px;
+    height: 160px;
+    float: left;
+    background-color: rgb(245, 201, 57);
+}
+#d13
+{
+    width: 150px;
+    height: 150px;
+    float: left;
+    margin-left: 130px;
+    margin-top: 10px;
+    color: white;
+}
+#hr4
+{
+    width:150px;
+    border: 0.1px;
+    margin-top: 10px;
+    border-style:dotted;
+}
+#d14
+{
+    width: 990px;
+    height: 40px;
+    margin: 0 auto;
+    float: left;
+    background: black;
+}
+#pre2
+{
+    color: white;
+    font-size:10px;
+    margin-left: 320px;
+}
+#hr5
+{
+    width: 990px;
+    height: 1px;
+    margin:0 auto;
+    border-style:dotted;
+    color: white;
+}
+#d15
+{
+    width: 320px;
+    height:250px;
+    overflow: hidden;
+    float: left;
+}
+
+#d16
+{
+    width: 1280px;
+    height: 250px;
+    animation: 15s;
+    animation-name:demo;
+    animation-iteration-count:  infinite; 
+    animation-timing-function:ease-in-out;
+}
+#d16 img
+{
+    float: left;
+}
+@keyframes demo
+{
+    0%{}
+    5%{transform: translateX(0px);}
+    15%{transform: translateX(-320px);}
+    30%{transform: translateX(-320px);}
+    45%{transform: translateX(-640px);}
+    60%{transform: translateX(-640px);}
+    75%{transform: translateX(-960px);}
+    90%{transform: translateX(-960px);}
+    100%{transform: translateX(0px);}
+}

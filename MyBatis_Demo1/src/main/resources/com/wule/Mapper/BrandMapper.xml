@@ -9,6 +9,7 @@
         <result column="brand_name" property="brandName"/>
     </resultMap>
 
+
     <!--    <sql id="brand_column">-->
 <!--        id, brand_name as brandName, company_name as companyName, ordered, description, status-->
 <!--    </sql>-->
@@ -71,13 +72,22 @@
         </where>
     </select>
 
-    <insert id="add">
+    <insert id="add" useGeneratedKeys="true" keyProperty="id">
         insert into brand (brand_name, company_name, ordered, description, status)
         values (#{brandName},#{companyName},#{ordered},#{description},#{status});
     </insert>
 
 
+    <update id="update">
+        update brand
+        set brand_name = #{brandName},
+            company_name = #{companyName},
+            ordered = #{ordered},
+            description = #{description},
+            status = #{status}
+        where id = #{id};
 
+    </update>
 
 
 </mapper>

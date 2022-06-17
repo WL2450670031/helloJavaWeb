@@ -56,4 +56,5 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <packaging>war</packaging>
 </project>

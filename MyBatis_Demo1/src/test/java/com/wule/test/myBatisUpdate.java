@@ -10,18 +10,19 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
 
-public class MyBatisAdd
+public class myBatisUpdate
 {
+
     @Test
-    public void addTest() throws IOException
+    public void updateTest() throws IOException
     {
         Integer status = 1;//参数
         String companyName = "吴乐";
         String brandName = "纯如也";
         String description = "日天";
-        int ordered = 1000;
+        int ordered = 200;
+        int id = 1;
 
 
         Brand brand = new Brand();
@@ -30,6 +31,7 @@ public class MyBatisAdd
         brand.setCompanyName(companyName);
         brand.setDescription(description);
         brand.setOrdered(ordered);
+        brand.setId(id);
 
         // 1.加载mybatis核心配置文件，获取SqlSessionFactory
         String resource = "mybatis-config.xml";
@@ -43,9 +45,7 @@ public class MyBatisAdd
         BrandMapper brandMapper = sqlSession.getMapper(BrandMapper.class);
 
         //4.执行SQL语句
-        brandMapper.add(brand);
-        Integer id = brand.getId();
-        System.out.println(id);
+        System.out.println(brandMapper.update(brand));
 
         //提交事务。
         sqlSession.commit();

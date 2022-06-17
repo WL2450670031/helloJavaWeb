@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>MyBatis_Demo1</module>
+        <module>helloWeb</module>
     </modules>
 
     <properties>
