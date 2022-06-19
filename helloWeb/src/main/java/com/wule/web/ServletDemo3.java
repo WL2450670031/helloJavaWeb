@@ -12,6 +12,8 @@ public class ServletDemo3 extends HttpServlet
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
     {
         System.out.println("get...");
+
+        System.out.println(req.getAttribute("wule"));
     }
 
     @Override
