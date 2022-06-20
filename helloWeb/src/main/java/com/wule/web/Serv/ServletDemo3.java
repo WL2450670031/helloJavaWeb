@@ -1,4 +1,4 @@
-package com.wule.web;
+package com.wule.web.Serv;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
